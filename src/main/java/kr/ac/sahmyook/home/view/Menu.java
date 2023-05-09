@@ -43,14 +43,12 @@ public class Menu {
                 case 11: subNonStaticMethod(); break;
                 case 12:
                     sc.nextLine();
-                    int i = 0;
                     do {
                         System.out.print("정말로 종료하시겠습니까? (예:y/아니요:n) : "); // 다시
                         String str = sc.nextLine();
                         if ("y".equals(str) || "Y".equals(str)) {
                             System.out.println("종료합니다.");
                             return;
-                            //break;
                             //System.exit(0);
                         } else if ("n".equals(str) || "N".equals(str)) {
                             no = 0;
@@ -58,7 +56,7 @@ public class Menu {
                         } else {
                             System.out.println("잘못 입력하셨습니다! 다시 입력해주세요.");
                         }
-                    } while( i == 0);
+                    } while(true);
                     break;
                 default: no = 0;
             }
@@ -78,7 +76,7 @@ public class Menu {
             switch(no){
                 case 1: vs.myProfile(); break;
                 case 2: vs.empInformation(); break;
-                case 3: System.out.println("메인 메뉴로 돌아갑니다."); no = 0; return;
+                case 3: System.out.println("메인 메뉴로 돌아갑니다."); return;
                 default: no = 0;
             }
             sc.nextLine();
@@ -297,7 +295,7 @@ public class Menu {
         } while(true);
     }
     public void subStaticMethodMenu(){
-        StaticMethodSample sms = new StaticMethodSample();
+        // StaticMethodSample sms = new StaticMethodSample();
         do{
             System.out.println("\n*** static 메소드 사용 테스트 부메뉴 ***\n");
             System.out.println("1. Math 클래스의 랜덤값 구하는 메소드 : 1~45사이의 임의의 정수 출력");
